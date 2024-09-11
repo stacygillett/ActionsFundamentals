@@ -17,9 +17,10 @@ jobs:
     steps:
       - env:
           EVENT_CONTEXT: ${{ toJSON(github.event) }}
-        run: |
+      - run: |
           echo $EVENT_CONTEXT
-        run: |
+      - run: |
           echo $GITHUB_REF
-        run: |
+      - uses: actions/checkout@v3.3.0
+      - run: |
           ls -alR
